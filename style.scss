@@ -2,7 +2,8 @@
 
 @import "compass/reset",
         "bootstrap",
-        "compass/utilities";
+        "compass/utilities",
+        "compass/css3";
 
 /* ----------------------------
  * Mixins
@@ -12,6 +13,7 @@
   &:hover{
     color: darken($color, 20%);
     text-decoration: none;
+    background: transparent;
   }
 }
 
@@ -87,24 +89,65 @@ a{
 /* ----------------------------
   * Nav
   ----------------------------*/
+
+  .nav-wrapper{
+    width: 100%;
+    padding: 10px 0;
+
+    a{
+      color: white;
+      font-size: 16px;
+    }
+  }
+
 .nav{
-  @include horizontal-list;
+  @include clearfix;
+  background: image_url('bg.gif') repeat top left;
+  li{
+    float: left;
+    margin: 0 5px;
+  }
+  a:hover{
+    background: none !important;
+  }
+  li{
+    border: 1px solid white;
+    @include border-radius(5px);
+    margin: 5px;
+    padding: 5px;
+
+    &.default-link{
+      background: $dark-gray;
+      @include background-image(linear-gradient($dark-gray, darken($dark-gray, 10%), $dark-gray));
+
+      &:hover{
+        @include background-image(linear-gradient(darken($dark-gray, 10%), $dark-gray, darken($dark-gray, 10%)));
+      }
+    }
+  }
   /* Nav Social Icons*/
   li.nav-social{
     float: right;
     text-indent: -9999px;
     display: block;
+    padding: 0;
+    margin: 5px;
+    border: none;
+    background-color: transparent !important;
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    &:hover{
+      -webkit-transform: rotateZ(360deg);
+      -moz-transform: rotateZ(360deg);
+      transform: rotateZ(360deg);
+    }
+    a{
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
   }
 }
 
-.nav-wrapper{
-  background: $color-bg-nav;
-  width: 100%;
-  padding: 10px 0;
-
-  a{
-    color: white;
-    font-size: 16px;
-  }
-}
 
