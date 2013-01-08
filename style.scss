@@ -36,6 +36,9 @@ $accent: $orange;
 $color-link: $blue;
 $color-bg-nav: $gray;
 $color-font: #222;
+$color-heading: $dark-blue;
+
+$max-width: 960px;
 
 body{
   color: $color-font;
@@ -55,11 +58,18 @@ body{
 a{
   @include link-color($color-link);
 }
+h1,h2,h3,h4,h5,h6{
+  color: $color-heading;
+}
 
 
 /* ----------------------------
   * Header
   ----------------------------*/
+hgroup{
+  margin: 0 auto;
+  width: $max-width;
+}
 .header-container{
   @include clearfix;
 
@@ -100,9 +110,14 @@ a{
     }
   }
 
+.nav-wrapper{
+  background: image_url('bg.gif') repeat top left;
+  width: 100%;
+}
 .nav{
   @include clearfix;
-  background: image_url('bg.gif') repeat top left;
+  margin: 0 auto;
+  width: $max-width;
   li{
     float: left;
     margin: 0 5px;
@@ -149,5 +164,56 @@ a{
     }
   }
 }
+
+/* ----------------------------
+  * Body
+  ----------------------------*/
+.wrapper{
+  margin: 0 auto;
+  width: $max-width;
+}
+
+/* ----------------------------
+  * Front Page
+  ----------------------------*/
+.front-widgets{
+
+  @include clearfix;
+  &.first{
+    padding-bottom: 10px;
+  }
+  .widget_tag_cloud{
+    width: 30%;
+    float: left
+  }
+  .popular-posts{
+    width: 65%;
+    float: right;
+  }
+}
+
+.widget_tag_cloud{
+  .tagcloud{
+    a{
+      line-height: 1.5em;
+      margin-left: 10px;
+    }
+  }
+}
+.popular-posts{
+  li{
+    margin: 10px 0;
+    .wpp-post-title{
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .wpp-excerpt{
+      display: block;
+      margin-left: 10px;
+      font-size: 12px;
+    }
+  }
+}
+
 
 
