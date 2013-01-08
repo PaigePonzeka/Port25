@@ -35,23 +35,27 @@
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
 
-		<hgroup>
-
-			<h1 class="site-title">
-			<?php $header_image = get_header_image();
-  		  if ( ! empty( $header_image ) ) : ?>
-  			  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-  			  <img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
-  		<?php endif; ?>
-  		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<hgroup class="header-container">
+		  <div class="site-logo pull-left">
+        <?php $header_image = get_header_image();
+         if ( ! empty( $header_image ) ) : ?>
+    			  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+    			  <img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+    		<?php endif; ?>
+    	</div>
+    	<div class="site-title pull-left">
+			  <h1>
+    		  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+    		</h1>
+			  <h5 class="site-description"><?php bloginfo( 'description' ); ?></h5>
+			</div>
 		</hgroup>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+      <!-- Main Navigation -->
+		<nav id="site-navigation" class="main-navigation nav-wrapper" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
+		</nav>
+		<!-- / Main Navigation -->
 
 
 	</header><!-- #masthead -->

@@ -1,4 +1,110 @@
 
 
 @import "compass/reset",
-        "bootstrap";
+        "bootstrap",
+        "compass/utilities";
+
+/* ----------------------------
+ * Mixins
+ ----------------------------*/
+@mixin link-color($color){
+  color: $color;
+  &:hover{
+    color: darken($color, 20%);
+    text-decoration: none;
+  }
+}
+
+
+/* ----------------------------
+ * Colors
+ ----------------------------*/
+$dark-blue: #033E6B;
+$blue: #104BA9;
+$green-blue: #015367;
+$orange: #FF9200;
+$gray: #666;
+$dark-gray: #777;
+
+$primary: $dark-blue;
+$secondary: $blue;
+$thiry: $green-blue;
+$accent: $orange;
+
+$color-link: $blue;
+$color-bg-nav: $gray;
+$color-font: #222;
+
+body{
+  color: $color-font;
+}
+
+/* ----------------------------
+  * Sprites
+  ----------------------------*/
+@import "icon/*.png";
+@include all-icon-sprites(true);
+
+
+
+/* ----------------------------
+ * Fonts
+ ----------------------------*/
+a{
+  @include link-color($color-link);
+}
+
+
+/* ----------------------------
+  * Header
+  ----------------------------*/
+.header-container{
+  @include clearfix;
+
+  .site-logo{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .site-title{
+    margin-left: 10px;
+    h5{
+      text-align: center;
+    }
+    a{
+      @include link-color($primary);
+
+    }
+  }
+}
+
+
+
+/* ----------------------------
+  * Nav
+  ----------------------------*/
+.nav{
+  @include horizontal-list;
+  /* Nav Social Icons*/
+  li.nav-social{
+    float: right;
+    text-indent: -9999px;
+    display: block;
+  }
+}
+
+.nav-wrapper{
+  background: $color-bg-nav;
+  width: 100%;
+  padding: 10px 0;
+
+  a{
+    color: white;
+    font-size: 16px;
+  }
+}
+
