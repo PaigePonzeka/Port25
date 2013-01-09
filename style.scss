@@ -24,7 +24,8 @@
 $dark-blue: #033E6B;
 $blue: #104BA9;
 $green-blue: #015367;
-$orange: #FF9200;
+//$orange: #FF9200;
+$orange: #D37510; // a little bit darker
 $gray: #666;
 $dark-gray: #777;
 
@@ -182,15 +183,14 @@ hgroup{
   &.first{
     padding-bottom: 10px;
   }
-  .widget_tag_cloud{
+  .widget_tag_cloud, .widget_recent_comments{
     width: 30%;
     float: left
   }
-  .popular-posts{
+  .popular-posts, .rpwe_widget{
     width: 65%;
     float: right;
   }
-}
 
 .widget_tag_cloud{
   .tagcloud{
@@ -203,6 +203,7 @@ hgroup{
 .popular-posts{
   li{
     margin: 10px 0;
+    border: none;
     .wpp-post-title{
       font-weight: bold;
       font-size: 16px;
@@ -213,7 +214,111 @@ hgroup{
       font-size: 12px;
     }
   }
+
 }
 
+#searchform{
+  input[type="text"]{
+    width: 90%;
+    margin-bottom: 0px;
+  }
+  .screen-reader-text{
+    display: none;
+  }
+}
 
+.widget_recent_comments{
+  ul{
+    margin-left: 0;
+    >li{
+      font-size: 12px;
+      margin: 5px 0;
+      border-top: 1px dotted black;
+      padding-top: 5px;
+      padding-left: 5px;
+      &:last-child{
+        border-bottom: 1px dotted black;
+        padding-bottom: 5px;
+      }
+      >a{
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.rpwe_widget{
+
+  .rpwe-block li{
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  h3.rpwe-title a{
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .rpwe-summary{
+    display: block;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  .rpwe-block ul {
+  	margin-left: 25px !important;
+  }
+}
+
+} // End of Front Widgets
+
+/* ----------------------------
+  * Post
+  ----------------------------*/
+.post{
+  h1{
+    color: $accent;
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+  h2{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 18px;
+  }
+  h4{
+    font-size: 16px;
+  }
+  h5,h6{
+    font-size: 14px;
+  }
+
+  #codeSnippetWrapper pre, #codeSnippet{
+    background-color: black !important;
+    color: white !important; //overriding the plugin
+    font-size: 12px;
+    line-height: 14px;
+    font-family: monospace !important;
+  }
+}
+
+/* ----------------------------
+  * Footer
+  ----------------------------*/
+footer{
+  margin-top: 30px;
+}
+
+.footer-container{
+  margin: 0 auto;
+  width: $max-width;
+
+  text-align: center;
+
+  .seperator{
+    margin: 0 10px;
+  }
+}
 

@@ -12,9 +12,10 @@
 ?>
 	</div><!-- #main .wrapper -->
 	<footer id="colophon" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'twentytwelve_credits' ); ?>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a>
+		<div class="site-info footer-container">
+		  Copyright &copy;<?php echo date("Y"); ?> Paul Ponzeka
+			<span class="seperator">|</span> <a href="http://wordpress.org/">Proudly powered by WordPress</a>
+			<span class="seperator">|</span> Site By <a href="http://ponzeka.com"> Paige </a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

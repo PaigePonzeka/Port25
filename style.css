@@ -6760,7 +6760,7 @@ a.label:hover, a.badge:hover {
 /* ----------------------------
  * Colors
  ----------------------------*/
-/* line 43, style.scss */
+/* line 44, style.scss */
 body {
   color: #222222;
 }
@@ -7028,7 +7028,7 @@ body {
 /* ----------------------------
  * Fonts
  ----------------------------*/
-/* line 58, style.scss */
+/* line 59, style.scss */
 a {
   color: #104ba9;
 }
@@ -7039,7 +7039,7 @@ a:hover {
   background: transparent;
 }
 
-/* line 61, style.scss */
+/* line 62, style.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #033e6b;
 }
@@ -7047,37 +7047,37 @@ h1, h2, h3, h4, h5, h6 {
 /* ----------------------------
   * Header
   ----------------------------*/
-/* line 69, style.scss */
+/* line 70, style.scss */
 hgroup {
   margin: 0 auto;
   width: 960px;
 }
 
-/* line 73, style.scss */
+/* line 74, style.scss */
 .header-container {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 76, style.scss */
+/* line 77, style.scss */
 .header-container .site-logo {
   width: 100px;
   height: 100px;
   overflow: hidden;
 }
-/* line 80, style.scss */
+/* line 81, style.scss */
 .header-container .site-logo img {
   width: 100%;
   height: 100%;
 }
-/* line 85, style.scss */
+/* line 86, style.scss */
 .header-container .site-title {
   margin-left: 10px;
 }
-/* line 87, style.scss */
+/* line 88, style.scss */
 .header-container .site-title h5 {
   text-align: center;
 }
-/* line 90, style.scss */
+/* line 91, style.scss */
 .header-container .site-title a {
   color: #033e6b;
 }
@@ -7091,24 +7091,24 @@ hgroup {
 /* ----------------------------
   * Nav
   ----------------------------*/
-/* line 103, style.scss */
+/* line 104, style.scss */
 .nav-wrapper {
   width: 100%;
   padding: 10px 0;
 }
-/* line 107, style.scss */
+/* line 108, style.scss */
 .nav-wrapper a {
   color: white;
   font-size: 16px;
 }
 
-/* line 113, style.scss */
+/* line 114, style.scss */
 .nav-wrapper {
   background: url('../port25/images/bg.gif?1357619798') repeat top left;
   width: 100%;
 }
 
-/* line 117, style.scss */
+/* line 118, style.scss */
 .nav {
   overflow: hidden;
   *zoom: 1;
@@ -7116,16 +7116,16 @@ hgroup {
   width: 960px;
   /* Nav Social Icons*/
 }
-/* line 121, style.scss */
+/* line 122, style.scss */
 .nav li {
   float: left;
   margin: 0 5px;
 }
-/* line 125, style.scss */
+/* line 126, style.scss */
 .nav a:hover {
   background: none !important;
 }
-/* line 128, style.scss */
+/* line 129, style.scss */
 .nav li {
   border: 1px solid white;
   -webkit-border-radius: 5px;
@@ -7136,7 +7136,7 @@ hgroup {
   margin: 5px;
   padding: 5px;
 }
-/* line 134, style.scss */
+/* line 135, style.scss */
 .nav li.default-link {
   background: #777777;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #777777), color-stop(50%, #5e5e5e), color-stop(100%, #777777));
@@ -7145,7 +7145,7 @@ hgroup {
   background-image: -o-linear-gradient(#777777, #5e5e5e, #777777);
   background-image: linear-gradient(#777777, #5e5e5e, #777777);
 }
-/* line 138, style.scss */
+/* line 139, style.scss */
 .nav li.default-link:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5e5e5e), color-stop(50%, #777777), color-stop(100%, #5e5e5e));
   background-image: -webkit-linear-gradient(#5e5e5e, #777777, #5e5e5e);
@@ -7153,7 +7153,7 @@ hgroup {
   background-image: -o-linear-gradient(#5e5e5e, #777777, #5e5e5e);
   background-image: linear-gradient(#5e5e5e, #777777, #5e5e5e);
 }
-/* line 144, style.scss */
+/* line 145, style.scss */
 .nav li.nav-social {
   float: right;
   text-indent: -9999px;
@@ -7166,13 +7166,13 @@ hgroup {
   -moz-transition: -moz-transform 0.4s ease-out;
   transition: transform 0.4s ease-out;
 }
-/* line 155, style.scss */
+/* line 156, style.scss */
 .nav li.nav-social:hover {
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
 }
-/* line 160, style.scss */
+/* line 161, style.scss */
 .nav li.nav-social a {
   width: 32px;
   height: 32px;
@@ -7182,7 +7182,7 @@ hgroup {
 /* ----------------------------
   * Body
   ----------------------------*/
-/* line 171, style.scss */
+/* line 172, style.scss */
 .wrapper {
   margin: 0 auto;
   width: 960px;
@@ -7191,44 +7191,147 @@ hgroup {
 /* ----------------------------
   * Front Page
   ----------------------------*/
-/* line 179, style.scss */
+/* line 180, style.scss */
 .front-widgets {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 182, style.scss */
+/* line 183, style.scss */
 .front-widgets.first {
   padding-bottom: 10px;
 }
-/* line 185, style.scss */
-.front-widgets .widget_tag_cloud {
+/* line 186, style.scss */
+.front-widgets .widget_tag_cloud, .front-widgets .widget_recent_comments {
   width: 30%;
   float: left;
 }
-/* line 189, style.scss */
-.front-widgets .popular-posts {
+/* line 190, style.scss */
+.front-widgets .popular-posts, .front-widgets .rpwe_widget {
   width: 65%;
   float: right;
 }
-
 /* line 197, style.scss */
-.widget_tag_cloud .tagcloud a {
+.front-widgets .widget_tag_cloud .tagcloud a {
   line-height: 1.5em;
   margin-left: 10px;
 }
-
 /* line 204, style.scss */
-.popular-posts li {
+.front-widgets .popular-posts li {
   margin: 10px 0;
+  border: none;
 }
-/* line 206, style.scss */
-.popular-posts li .wpp-post-title {
+/* line 207, style.scss */
+.front-widgets .popular-posts li .wpp-post-title {
   font-weight: bold;
   font-size: 16px;
 }
-/* line 210, style.scss */
-.popular-posts li .wpp-excerpt {
+/* line 211, style.scss */
+.front-widgets .popular-posts li .wpp-excerpt {
   display: block;
   margin-left: 10px;
   font-size: 12px;
+}
+/* line 221, style.scss */
+.front-widgets #searchform input[type="text"] {
+  width: 90%;
+  margin-bottom: 0px;
+}
+/* line 225, style.scss */
+.front-widgets #searchform .screen-reader-text {
+  display: none;
+}
+/* line 231, style.scss */
+.front-widgets .widget_recent_comments ul {
+  margin-left: 0;
+}
+/* line 233, style.scss */
+.front-widgets .widget_recent_comments ul > li {
+  font-size: 12px;
+  margin: 5px 0;
+  border-top: 1px dotted black;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+/* line 239, style.scss */
+.front-widgets .widget_recent_comments ul > li:last-child {
+  border-bottom: 1px dotted black;
+  padding-bottom: 5px;
+}
+/* line 243, style.scss */
+.front-widgets .widget_recent_comments ul > li > a {
+  font-size: 14px;
+}
+/* line 252, style.scss */
+.front-widgets .rpwe_widget .rpwe-block li {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+/* line 258, style.scss */
+.front-widgets .rpwe_widget h3.rpwe-title a {
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 263, style.scss */
+.front-widgets .rpwe_widget .rpwe-summary {
+  display: block;
+  margin-left: 10px;
+  font-size: 12px;
+}
+/* line 269, style.scss */
+.front-widgets .rpwe_widget .rpwe-block ul {
+  margin-left: 25px !important;
+}
+
+/* ----------------------------
+  * Post
+  ----------------------------*/
+/* line 280, style.scss */
+.post h1 {
+  color: #d37510;
+  font-size: 24px;
+  line-height: 1.5em;
+}
+/* line 285, style.scss */
+.post h2 {
+  font-size: 20px;
+}
+/* line 288, style.scss */
+.post h3 {
+  font-size: 18px;
+}
+/* line 291, style.scss */
+.post h4 {
+  font-size: 16px;
+}
+/* line 294, style.scss */
+.post h5, .post h6 {
+  font-size: 14px;
+}
+/* line 298, style.scss */
+.post #codeSnippetWrapper pre, .post #codeSnippet {
+  background-color: black !important;
+  color: white !important;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: monospace !important;
+}
+
+/* ----------------------------
+  * Footer
+  ----------------------------*/
+/* line 310, style.scss */
+footer {
+  margin-top: 30px;
+}
+
+/* line 314, style.scss */
+.footer-container {
+  margin: 0 auto;
+  width: 960px;
+  text-align: center;
+}
+/* line 320, style.scss */
+.footer-container .seperator {
+  margin: 0 10px;
 }

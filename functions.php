@@ -101,6 +101,9 @@ function twentytwelve_scripts_styles() {
 	 * Adds JavaScript for handling the navigation menu hide-and-show behavior.
 	 */
 	wp_enqueue_script( 'twentytwelve-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
+	//http://code.jquery.com/jquery-1.8.3.min.js
+	wp_enqueue_script( 'port25-jquery', 'http://code.jquery.com/jquery-1.8.3.min.js', array(), '1.0', true );
+	wp_enqueue_script( 'port25-default', get_template_directory_uri() . '/js/port25.js', array(), '1.5', true );
 
 	/*
 	 * Loads our special font CSS file.
@@ -446,5 +449,65 @@ add_action( 'customize_register', 'twentytwelve_customize_register' );
  */
 function twentytwelve_customize_preview_js() {
 	wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
+
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
+
+
+/* Adding in a Custom background image to the login screen*/
+function login_enqueue_scripts(){
+	echo '
+		<div class="background-cover"></div>
+		<style type="text/css" media="screen">
+			.background-cover{
+				background:url('.get_bloginfo('template_directory').'/images/background.jpg) no-repeat center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				position:fixed;
+				top:0;
+				left:0;
+				z-index:10;
+				overflow: hidden;
+				width: 100%;
+				height:100%;
+			}
+			#login{ z-index:9999; position:relative; }
+			.login form { box-shadow: 0px 0px 0px 0px !important; }
+			.login h1 a { background:url('.get_bloginfo('template_directory').'/images/logo.png) no-repeat center top !important; }
+			input.button-primary, button.button-primary, a.button-primary{
+				border-radius: 3px !important; 						background:url('.get_bloginfo('template_directory').'/images/button.jpg);
+					border:none !important;
+					font-weight:normal !important;
+					text-shadow:none !important;
+				}
+				.button:active, .submit input:active, .button-secondary:active {
+					background:#96C800 !important;
+					text-shadow: none !important;
+				}
+				.login #nav a, .login #backtoblog a {
+					color:#fff !important;
+				}
+				.login #nav a:hover, .login #backtoblog a:hover{
+					color:#96C800 !important;
+					text-shadow: none !important;
+				}
+				.login #nav, .login #backtoblog{
+					text-shadow: none !important;
+				}
+				.login form .input, .login input[type="text"] {
+			    font-size: 14px;
+			  }
+			</style>
+		';
+	}
+add_action( 'login_enqueue_scripts', 'login_enqueue_scripts' );
+
+
+/* Change Dashboard Colors*/
+function custom_colors() {
+   /*echo '<style type="text/css">#wpadminbar{background:#0f0}</style>';*/
+}
+
+add_action('admin_head', 'custom_colors');
