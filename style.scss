@@ -17,6 +17,18 @@
   }
 }
 
+@mixin clearfix {
+  zoom:1;
+  &:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    font-size: 0;
+    visibility: hidden;
+  }
+}
+
 
 /* ----------------------------
  * Colors
@@ -112,20 +124,49 @@ hgroup{
   }
 
 .nav-wrapper{
-  background: image_url('bg.gif') repeat top left;
   width: 100%;
+}
+
+.nav-container{
+  margin: 0 auto;
+  width: $max-width;
+  position: relative;
+
+  .nav-ribbon-left{
+    @extend .icon-ribbon-left;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .nav-ribbon-right{
+    @extend .icon-ribbon-right;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 .nav{
   @include clearfix;
-  margin: 0 auto;
-  width: $max-width;
+  background: $accent;
+  margin: 0 20px;
   li{
     float: left;
     margin: 0 5px;
   }
-  a:hover{
-    background: none !important;
+
+  $logo-width: 278px;
+  .port-25-logo {
+    border: none;
+    position: absolute;
+    top: -53px;
+    left: 50%;
+    margin-left:  -$logo-width/2;
+    a{
+      text-indent: -9999px;
+      @extend .icon-logo-port25;
+    }
   }
+
   li{
     border: 1px solid white;
     @include border-radius(5px);

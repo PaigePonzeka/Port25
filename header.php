@@ -53,7 +53,12 @@
 
       <!-- Main Navigation -->
 		<nav id="site-navigation" class="main-navigation nav-wrapper" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
+		  <div class="nav-container">
+		    <div class="nav-ribbon-left"></div>
+		    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
+		    <div class="nav-ribbon-right"></div>
+		  </div>
+
 		</nav>
 		<!-- / Main Navigation -->
 
