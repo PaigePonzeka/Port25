@@ -41,15 +41,18 @@ $orange: #D37510; // a little bit darker
 $gray: #666;
 $dark-gray: #777;
 
+$dark-blue-alt: #273c88;
+
 $primary: $dark-blue;
 $secondary: $blue;
 $thiry: $green-blue;
 $accent: $orange;
 
-$color-link: $blue;
+$color-link: $dark-blue-alt;
 $color-bg-nav: $gray;
 $color-font: #222;
-$color-heading: $dark-blue;
+$color-heading: $dark-blue-alt;
+$color-bg-main-nav: $dark-blue-alt;
 
 $max-width: 960px;
 
@@ -74,6 +77,17 @@ body{
 
 
  @font-face {
+     font-family: 'intro';
+     src: url('fonts/intro-webfont.eot');
+     src: url('fonts/intro-webfont.eot?#iefix') format('embedded-opentype'),
+          url('fonts/intro-webfont.woff') format('woff'),
+          url('fonts/intro-webfont.ttf') format('truetype'),
+          url('fonts/intro-webfont.svg#intro_regular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+ @font-face {
      font-family: 'ArmWrestlerBold';
      src: url('fonts/ArmWrestler-webfont.eot');
      src: url('fonts/ArmWrestler-webfont.eot?#iefix') format('embedded-opentype'),
@@ -89,7 +103,9 @@ body{
 @mixin ArmWrestlerBold{
   font-family: 'ArmWrestlerBold';
 }
-
+@mixin Intro{
+  font-family: 'intro';
+}
 a{
   @include link-color($color-link);
 }
@@ -98,8 +114,11 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h1, h2, h3{
-  @include ArmWrestlerBold;
+  @include Intro;
   font-weight: normal;
+  a{
+    font-weight: normal;
+  }
 }
 
 
@@ -134,30 +153,60 @@ hgroup{
   }
 }
 
-
-
 /* ----------------------------
   * Nav
   ----------------------------*/
-.navbar{
-  width: $max-width;
-  margin: 0 auto;
+.navbar .nav{
+    width: $max-width;
+    margin: 0 auto;
+    float: none;
 }
+
+#top-nav{
+  color: white;
+  height: 30px;
+  margin-bottom: 0;
+  @include clearfix;
+  overflow: hidden;
+  .navbar-inner{
+    height: 20px;
+    min-height: 20px;
+    padding: 5px 0;
+    @include background-image(linear-gradient($color-bg-main-nav, darken($color-bg-main-nav, 10%)));
+
+  }
+  .logo{
+    background: image_url('logo_white.png') no-repeat;
+    width: 141px;
+    height: 20px;
+    text-indent: -9999px;
+    display: block;
+    margin-right: 10px;
+  }
+}
+
 .navbar-inner{
   padding: 0;
+}
+.navbar .nav > li > a:hover{
+  color: white;
+  text-shadow: none;
 }
 .nav{
   @include clearfix;
   margin: 0 20px;
   width: 100%;
-  li{
+  >li{
     float: left;
     padding: 1px 0px;
-    a{
+    >a{
       padding: 12px 10px;
     }
     &:hover{
-      @include background-image(linear-gradient(#eee, #ddd));
+      @include background-image(linear-gradient($color-bg-main-nav, darken($color-bg-main-nav, 10%)));
+      >a{
+        color: white;
+      }
     }
 
   }
@@ -209,7 +258,7 @@ hgroup{
   ----------------------------*/
 .wrapper{
   margin: 0 auto;
-  width: $max-width;
+  width: $max-width - 60;
 }
 
 /* ----------------------------
@@ -243,7 +292,6 @@ hgroup{
     margin: 10px 0;
     border: none;
     .wpp-post-title{
-      font-weight: bold;
       font-size: 16px;
     }
     .wpp-excerpt{
@@ -271,11 +319,9 @@ hgroup{
     >li{
       font-size: 12px;
       margin: 5px 0;
-      border-top: 1px dotted black;
       padding-top: 5px;
       padding-left: 5px;
       &:last-child{
-        border-bottom: 1px dotted black;
         padding-bottom: 5px;
       }
       >a{
@@ -286,7 +332,11 @@ hgroup{
 }
 
 .rpwe_widget{
-
+  .rpwe-block h3{
+    max-width: 500px;
+    max-height: 18px;
+    overflow: hidden;
+  }
   .rpwe-block li{
     padding: 0;
     margin: 0;
@@ -295,7 +345,6 @@ hgroup{
 
   h3.rpwe-title a{
     font-size: 16px;
-    font-weight: bold;
   }
 
   .rpwe-summary{
@@ -311,12 +360,20 @@ hgroup{
 
 } // End of Front Widgets
 
+
+#searchform{
+  @extend .navbar-inner;
+  padding: 10px 5px;
+}
+
+#searchsubmit{
+  @extend .btn-primary;
+}
 /* ----------------------------
   * Post
   ----------------------------*/
 .post{
   h1{
-    color: $accent;
     font-size: 24px;
     line-height: 1.5em;
   }

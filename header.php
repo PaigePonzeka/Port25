@@ -33,6 +33,14 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
+  <div class="navbar" id="top-nav">
+    <div class="navbar-inner">
+       <ul class="nav">
+          <li class="logo"> Port 25 Guy</li>
+          <li> Presents...</li>
+        </ul>
+    </div>
+  </div>
 	<header id="masthead" class="site-header" role="banner">
 
 		<hgroup class="header-container">
@@ -53,7 +61,7 @@
 
 
       <!-- Main Navigation -->
-      <div class="navbar">
+      <div class="navbar" id="main-nav">
         <div class="navbar-inner">
 		      <div class="nav-container">
 		        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
