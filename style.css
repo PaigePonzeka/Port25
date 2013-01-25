@@ -3705,7 +3705,7 @@ input[type="button"].btn-block {
 }
 
 /* line 138, ../../../../../../.rvm/gems/ruby-1.9.2-p180/gems/bootstrap-sass-2.2.2.0/vendor/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-primary.active, .active#searchsubmit,
+.btn-primary.active, .active#searchsubmit, #respond form .form-submit input.active,
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
@@ -3721,7 +3721,7 @@ input[type="button"].btn-block {
 }
 
 /* line 149, ../../../../../../.rvm/gems/ruby-1.9.2-p180/gems/bootstrap-sass-2.2.2.0/vendor/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-primary, #searchsubmit {
+.btn-primary, #searchsubmit, #respond form .form-submit input {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #006ccc;
@@ -3739,13 +3739,13 @@ input[type="button"].btn-block {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 /* line 496, ../../../../../../.rvm/gems/ruby-1.9.2-p180/gems/bootstrap-sass-2.2.2.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.btn-primary:hover, #searchsubmit:hover, .btn-primary:active, #searchsubmit:active, .btn-primary.active, .active#searchsubmit, .btn-primary.disabled, .disabled#searchsubmit, .btn-primary[disabled], [disabled]#searchsubmit {
+.btn-primary:hover, #searchsubmit:hover, #respond form .form-submit input:hover, .btn-primary:active, #searchsubmit:active, #respond form .form-submit input:active, .btn-primary.active, .active#searchsubmit, #respond form .form-submit input.active, .btn-primary.disabled, .disabled#searchsubmit, #respond form .form-submit input.disabled, .btn-primary[disabled], [disabled]#searchsubmit, #respond form .form-submit input[disabled] {
   color: white;
   background-color: #0044cc;
   *background-color: #003bb3;
 }
 /* line 504, ../../../../../../.rvm/gems/ruby-1.9.2-p180/gems/bootstrap-sass-2.2.2.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.btn-primary:active, #searchsubmit:active, .btn-primary.active, .active#searchsubmit {
+.btn-primary:active, #searchsubmit:active, #respond form .form-submit input:active, .btn-primary.active, .active#searchsubmit, #respond form .form-submit input.active {
   background-color: #003399 \9;
 }
 
@@ -4132,7 +4132,7 @@ input[type="submit"].btn.btn-mini {
   background-color: #e6e6e6;
 }
 /* line 140, ../../../../../../.rvm/gems/ruby-1.9.2-p180/gems/bootstrap-sass-2.2.2.0/vendor/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open .dropdown-toggle#searchsubmit {
+.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open .dropdown-toggle#searchsubmit, .btn-group.open #respond form .form-submit input.dropdown-toggle, #respond form .form-submit .btn-group.open input.dropdown-toggle {
   background-color: #0044cc;
 }
 /* line 143, ../../../../../../.rvm/gems/ruby-1.9.2-p180/gems/bootstrap-sass-2.2.2.0/vendor/assets/stylesheets/bootstrap/_button-groups.scss */
@@ -4182,7 +4182,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 191, ../../../../../../.rvm/gems/ruby-1.9.2-p180/gems/bootstrap-sass-2.2.2.0/vendor/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-primary .caret, #searchsubmit .caret,
+.btn-primary .caret, #searchsubmit .caret, #respond form .form-submit input .caret,
 .btn-warning .caret,
 .btn-danger .caret,
 .btn-info .caret,
@@ -7086,12 +7086,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* line 116, style.scss */
-h1, h2, h3 {
+h1, h2 {
   font-family: 'intro';
   font-weight: normal;
 }
 /* line 119, style.scss */
-h1 a, h2 a, h3 a {
+h1 a, h2 a {
   font-weight: normal;
 }
 
@@ -7458,20 +7458,119 @@ hgroup {
 }
 
 /* ----------------------------
+  * Comments
+  ----------------------------*/
+/* line 440, style.scss */
+#comments p {
+  font-size: 11px;
+  margin: 0;
+  line-height: 1.5em;
+}
+/* line 445, style.scss */
+#comments .comment {
+  margin: 5px;
+}
+/* line 448, style.scss */
+#comments .comment-author {
+  zoom: 1;
+}
+/* line 22, style.scss */
+#comments .comment-author:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  visibility: hidden;
+}
+/* line 451, style.scss */
+#comments .comment-author .comment-author-image {
+  float: left;
+  margin-right: 5px;
+}
+/* line 455, style.scss */
+#comments .comment-author .comment-author-details {
+  float: left;
+}
+/* line 459, style.scss */
+#comments .comment-author .comment-author-timestamp {
+  font-size: 11px;
+}
+
+/* ----------------------------
+  * Reply
+  ----------------------------*/
+/* line 469, style.scss */
+#respond {
+  width: 570px;
+}
+/* line 471, style.scss */
+#respond code {
+  white-space: normal;
+  float: left;
+  clear: both;
+}
+/* line 477, style.scss */
+#respond form .comment-notes {
+  margin: 5px 0;
+}
+/* line 480, style.scss */
+#respond form > p {
+  zoom: 1;
+}
+/* line 22, style.scss */
+#respond form > p:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  visibility: hidden;
+}
+/* line 482, style.scss */
+#respond form > p label {
+  float: left;
+  width: 150px;
+}
+/* line 486, style.scss */
+#respond form > p input[type="text"], #respond form > p textarea {
+  float: left;
+  width: 400px;
+}
+/* line 491, style.scss */
+#respond form .form-submit {
+  zoom: 1;
+}
+/* line 22, style.scss */
+#respond form .form-submit:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  visibility: hidden;
+}
+/* line 493, style.scss */
+#respond form .form-submit input {
+  float: right;
+  margin-top: 10px;
+}
+
+/* ----------------------------
   * Footer
   ----------------------------*/
-/* line 438, style.scss */
+/* line 504, style.scss */
 footer {
   margin-top: 30px;
 }
 
-/* line 442, style.scss */
+/* line 508, style.scss */
 .footer-container {
   margin: 0 auto;
   width: 960px;
   text-align: center;
 }
-/* line 448, style.scss */
+/* line 514, style.scss */
 .footer-container .seperator {
   margin: 0 10px;
 }

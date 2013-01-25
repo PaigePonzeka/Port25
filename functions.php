@@ -258,7 +258,7 @@ function twentytwelve_content_nav( $html_id ) {
 }
 endif;
 
-if ( ! function_exists( 'twentytwelve_comment' ) ) :
+if ( ! function_exists( 'port25_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
@@ -267,9 +267,9 @@ if ( ! function_exists( 'twentytwelve_comment' ) ) :
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since Twenty Twelve 1.0
+ * @since Port 25 1.0
  */
-function twentytwelve_comment( $comment, $args, $depth ) {
+function port25_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -287,20 +287,32 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<header class="comment-meta comment-author vcard">
-				<?php
-					echo get_avatar( $comment, 44 );
-					printf( '<cite class="fn">%1$s %2$s</cite>',
-						get_comment_author_link(),
-						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
-					);
-					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
-						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
-					);
-				?>
+			  <div class="comment-author-image">
+			    <?php echo get_avatar( $comment, 44 ); ?>
+			  </div>
+			  <div class="comment-author-details">
+			    <div class="comment-author-name">
+			      <?php
+    					printf( '<cite class="fn">%1$s %2$s</cite>',
+    						get_comment_author_link(),
+    						// If current post author is also comment author, make it known visually.
+    						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
+    					);
+    					?>
+			    </div>
+			    <div class="comment-author-timestamp">
+			      <?php
+			        	printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+      						esc_url( get_comment_link( $comment->comment_ID ) ),
+      						get_comment_time( 'c' ),
+      						/* translators: 1: date, 2: time */
+      						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
+      					);
+			      ?>
+			    </div>
+
+			  </div>
+
 			</header><!-- .comment-meta -->
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>

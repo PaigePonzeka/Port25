@@ -113,7 +113,7 @@ h1,h2,h3,h4,h5,h6{
   color: $color-heading;
 }
 
-h1, h2, h3{
+h1, h2{
   @include Intro;
   font-weight: normal;
   a{
@@ -432,6 +432,72 @@ hgroup{
   }
 }
 
+
+/* ----------------------------
+  * Comments
+  ----------------------------*/
+#comments{
+  p{
+    font-size: 11px;
+    margin: 0;
+    line-height: 1.5em;
+  }
+  .comment{
+    margin: 5px;
+  }
+  .comment-author{
+    @include clearfix;
+
+    .comment-author-image{
+      float: left;
+      margin-right: 5px;
+    }
+    .comment-author-details{
+      float: left;
+    }
+    .comment-author-name{}
+    .comment-author-timestamp{
+      font-size: 11px;
+    }
+
+  }
+}
+
+/* ----------------------------
+  * Reply
+  ----------------------------*/
+#respond{
+  width: 570px;
+  code{
+    white-space: normal;
+    float: left;
+    clear: both;
+  }
+  form{
+    .comment-notes{
+      margin: 5px 0;
+    }
+    >p {
+    @include clearfix;
+      label{
+        float: left;
+        width: 150px;
+      }
+      input[type="text"], textarea{
+        float: left;
+        width: 400px;
+      }
+    }
+    .form-submit{
+      @include clearfix;
+      input{
+        float: right;
+        margin-top: 10px;
+        @extend .btn-primary;
+      }
+    }
+  }
+}
 /* ----------------------------
   * Footer
   ----------------------------*/
