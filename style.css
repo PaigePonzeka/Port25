@@ -7457,20 +7457,111 @@ hgroup {
   text-align: right;
 }
 
+/* line 435, style.scss */
+.post {
+  border-top: 1px dotted #273c88;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+/* line 439, style.scss */
+.post .entry-title {
+  line-height: 1.5em;
+  font-size: 24px;
+}
+/* line 444, style.scss */
+.post .comments-link {
+  margin: 10px 0;
+}
+/* line 450, style.scss */
+.post .entry-header {
+  zoom: 1;
+}
+/* line 22, style.scss */
+.post .entry-header:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  visibility: hidden;
+}
+/* line 453, style.scss */
+.post .entry-date {
+  color: #666666;
+}
+/* line 456, style.scss */
+.post .entry-categories {
+  float: right;
+}
+
 /* ----------------------------
   * Comments
   ----------------------------*/
-/* line 440, style.scss */
+/* line 464, style.scss */
+#comments {
+  background: rgba(250, 250, 250, 0.9);
+  padding: 10px;
+}
+/* line 467, style.scss */
+#comments article.comment {
+  zoom: 1;
+}
+/* line 22, style.scss */
+#comments article.comment:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  visibility: hidden;
+}
+/* line 470, style.scss */
+#comments .comment-sidebar {
+  float: left;
+  width: 60px;
+}
+/* line 475, style.scss */
+#comments .comment-timestamp {
+  font-size: 11px;
+}
+/* line 478, style.scss */
+#comments .comment-body {
+  float: left;
+}
+/* line 481, style.scss */
+#comments .comment-content {
+  margin: 10px 0;
+}
+/* line 485, style.scss */
+#comments .comment-author-username {
+  font-weight: bold;
+}
+/* line 488, style.scss */
 #comments p {
   font-size: 11px;
   margin: 0;
   line-height: 1.5em;
 }
-/* line 445, style.scss */
-#comments .comment {
+/* line 493, style.scss */
+#comments li.comment {
   margin: 5px;
+  padding: 10px;
+  background: rgba(200, 200, 200, 0.3);
 }
-/* line 448, style.scss */
+/* line 498, style.scss */
+#comments li.comment ol.children {
+  margin: 0;
+  padding-left: 0;
+}
+/* line 502, style.scss */
+#comments li.comment ol.children > li.comment {
+  margin-left: 20px;
+  padding-left: 10px;
+  margin-top: 15px;
+  margin-right: 20px;
+  padding-right: 20px;
+}
+/* line 511, style.scss */
 #comments .comment-author {
   zoom: 1;
 }
@@ -7483,16 +7574,16 @@ hgroup {
   font-size: 0;
   visibility: hidden;
 }
-/* line 451, style.scss */
+/* line 514, style.scss */
 #comments .comment-author .comment-author-image {
   float: left;
   margin-right: 5px;
 }
-/* line 455, style.scss */
+/* line 518, style.scss */
 #comments .comment-author .comment-author-details {
   float: left;
 }
-/* line 459, style.scss */
+/* line 522, style.scss */
 #comments .comment-author .comment-author-timestamp {
   font-size: 11px;
 }
@@ -7500,21 +7591,21 @@ hgroup {
 /* ----------------------------
   * Reply
   ----------------------------*/
-/* line 469, style.scss */
+/* line 532, style.scss */
 #respond {
   width: 570px;
 }
-/* line 471, style.scss */
+/* line 534, style.scss */
 #respond code {
   white-space: normal;
   float: left;
   clear: both;
 }
-/* line 477, style.scss */
+/* line 540, style.scss */
 #respond form .comment-notes {
   margin: 5px 0;
 }
-/* line 480, style.scss */
+/* line 543, style.scss */
 #respond form > p {
   zoom: 1;
 }
@@ -7527,17 +7618,17 @@ hgroup {
   font-size: 0;
   visibility: hidden;
 }
-/* line 482, style.scss */
+/* line 545, style.scss */
 #respond form > p label {
   float: left;
   width: 150px;
 }
-/* line 486, style.scss */
+/* line 549, style.scss */
 #respond form > p input[type="text"], #respond form > p textarea {
   float: left;
   width: 400px;
 }
-/* line 491, style.scss */
+/* line 554, style.scss */
 #respond form .form-submit {
   zoom: 1;
 }
@@ -7550,7 +7641,7 @@ hgroup {
   font-size: 0;
   visibility: hidden;
 }
-/* line 493, style.scss */
+/* line 556, style.scss */
 #respond form .form-submit input {
   float: right;
   margin-top: 10px;
@@ -7559,18 +7650,18 @@ hgroup {
 /* ----------------------------
   * Footer
   ----------------------------*/
-/* line 504, style.scss */
+/* line 567, style.scss */
 footer {
   margin-top: 30px;
 }
 
-/* line 508, style.scss */
+/* line 571, style.scss */
 .footer-container {
   margin: 0 auto;
   width: 960px;
   text-align: center;
 }
-/* line 514, style.scss */
+/* line 577, style.scss */
 .footer-container .seperator {
   margin: 0 10px;
 }
