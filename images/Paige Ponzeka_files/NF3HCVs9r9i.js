@@ -1,0 +1,5 @@
+/*1361374106,173217629*/
+
+if (self.CavalryLogger) { CavalryLogger.start_js(["0jDeT"]); }
+
+__d("FacebarStructuredFragment",["copyProperties"],function(a,b,c,d,e,f){var g=b('copyProperties');function h(j,k){if(j&&k){return j.toLowerCase()==k.toLowerCase();}else return !j&&!k;}function i(j){this._text=String(j.text);this._uid=j.uid?String(j.uid):null;this._type=j.type?String(j.type):null;this._typeParts=null;}g(i.prototype,{getText:function(){return this._text;},getUID:function(){return this._uid;},getType:function(){return this._type;},getTypePart:function(j){return this._getTypeParts()[j];},getLength:function(){return this._text.length;},isType:function(j){for(var k=0;k<arguments.length;k++)if(!h(arguments[k],this.getTypePart(k)))return false;return true;},isWhitespace:function(){return (/^\s*$/).test(this._text);},toStruct:function(){return {text:this._text,type:this._type,uid:this._uid};},getHash:function(j){var k=j!=null?this._getTypeParts().slice(0,j).join(':'):this._type;return k+'::'+this._text;},_getTypeParts:function(){if(this._typeParts===null)this._typeParts=this._type?this._type.split(':'):[];return this._typeParts;}});e.exports=i;});

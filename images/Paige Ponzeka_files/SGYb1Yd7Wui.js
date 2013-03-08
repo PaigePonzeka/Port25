@@ -1,0 +1,5 @@
+/*1362130850,173217823*/
+
+if (self.CavalryLogger) { CavalryLogger.start_js(["NqNp9"]); }
+
+__d("runAfterScrollingStops",["Arbiter","Event","Run","debounceAcrossTransitions","emptyFunction","throttleAcrossTransitions"],function(a,b,c,d,e,f){var g=b('Arbiter'),h=b('Event'),i=b('Run'),j=b('debounceAcrossTransitions'),k=b('emptyFunction'),l=b('throttleAcrossTransitions');function m(x,y,z){if(y&&p[y])return;if(!o){g.subscribe('page_transition',w);o=true;}if(!n){x();return;}y&&(p[y]=1);q.push(x);if(!z){if(s){i.onLeave(w);s=false;}r.push(q.length-1);}}var n,o,p={},q=[],r=[],s=true,t=500,u=j(function(){n=false;var x=q;q=[];r=[];p={};for(var y=0,z=x.length;y<z;++y)x[y]();},t);function v(){n=true;u();}function w(){var x=r;r=[];s=true;for(var y=0,z=x.length;y<z;++y)q[x[y]]=k;}h.listen(window,'scroll',l(v,250));e.exports=m;});
