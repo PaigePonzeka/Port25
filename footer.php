@@ -1,25 +1,26 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
- * Contains footer content and the closing of the
- * #main and #page div elements.
+ * Contains the closing of the #content div and all content after.
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Port25V2
  */
+
 ?>
-	</div><!-- #main .wrapper -->
-	<footer id="colophon" role="contentinfo">
-		<div class="site-info footer-container">
-		  Copyright &copy;<?php echo date("Y"); ?> Paul Ponzeka
-			<span class="seperator">|</span> <a href="http://wordpress.org/">Proudly powered by WordPress</a>
-			<span class="seperator">|</span> Site By <a href="http://ponzeka.com"> Paige </a>
-		</div><!-- .site-info -->
+
+	</div><!-- #content -->
+
+	<footer class="port25-footer">
+		<div class="wrapper">
+			Site Created by <a href="http://ponzeka.com" target="_blank" title="Link to Developer - Paige Ponzeka's page">Paige Ponzeka</a>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 </body>
 </html>

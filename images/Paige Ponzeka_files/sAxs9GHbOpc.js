@@ -1,5 +1,0 @@
-/*1361763742,178142559*/
-
-if (self.CavalryLogger) { CavalryLogger.start_js(["GzlDu"]); }
-
-__d("EgoAdsObjectSet",["copyProperties","csx","DOM"],function(a,b,c,d,e,f){var g=b('copyProperties'),h=b('csx'),i=b('DOM');function j(){this._allEgoUnits=[];this._egoUnits=[];}g(j.prototype,{init:function(l){this._allEgoUnits=l;this._egoUnits=[];this._allEgoUnits.forEach(function(m){var n=k(m);if(!n||!n.holdout)this._egoUnits.push(m);},this);},getCount:function(){return this._egoUnits.length;},forEach:function(l,m){this._egoUnits.forEach(l,m);},getUnit:function(l){return this._egoUnits[l];},getHoldoutAdIDsForSpace:function(l,m){if(!l||!m)return [];var n=[];for(var o=0;l>0&&o<this._allEgoUnits.length;o++){var p=this._allEgoUnits[o],q=m(p),r=k(p);if(l>=q&&r&&r.holdout)n.push(r.adid);l-=q;}return n;},getHoldoutAdIDsForNumAds:function(l){l=Math.min(l,this._allEgoUnits.length);var m=[];for(var n=0;n<l;n++){var o=this._allEgoUnits[n],p=k(o);if(p&&p.holdout)m.push(p.adid);}return m;}});function k(l){var m=i.scry(l,"div._4u8")[0],n=m&&m.getAttribute('data-ad');return n&&JSON.parse(n)||undefined;}e.exports=j;});

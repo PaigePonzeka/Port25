@@ -1,15 +1,13 @@
 <?php
 /**
- * The template for displaying Comments.
+ * The template for displaying comments
  *
- * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to twentytwelve_comment() which is
- * located in the functions.php file.
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
  *
- * @package WordPress
- * @subpackage port25
- * @since Port 25 1.0
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Port25V2
  */
 
 /*
@@ -17,44 +15,58 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() )
+if ( post_password_required() ) {
 	return;
+}
 ?>
 
 <div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
-
-	<?php if ( have_comments() ) : ?>
-		<h3 class="comments-title">
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) : ?>
+		<h2 class="comments-title">
 			<?php
-				printf( _n( 'Comment', 'Comments;', get_comments_number(), 'port25' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			$comment_count = get_comments_number();
+			if ( 1 === $comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'port25v2' ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			} else {
+				printf( // WPCS: XSS OK.
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'port25v2' ) ),
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			}
 			?>
-		</h3>
+		</h2><!-- .comments-title -->
 
-		<ol class="commentlist">
-			<?php wp_list_comments( array( 'callback' => 'port25_comment', 'style' => 'ol' ) ); ?>
-		</ol><!-- .commentlist -->
+		<?php the_comments_navigation(); ?>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="navigation" role="navigation">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'twentytwelve' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentytwelve' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentytwelve' ) ); ?></div>
-		</nav>
-		<?php endif; // check for comment navigation ?>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'      => 'ol',
+					'short_ping' => true,
+				) );
+			?>
+		</ol><!-- .comment-list -->
 
+		<?php the_comments_navigation();
+
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() ) : ?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'port25v2' ); ?></p>
 		<?php
-		/* If there are no comments and comments are closed, let's leave a note.
-		 * But we only want the note on posts and pages that had comments in the first place.
-		 */
-		if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="nocomments"><?php _e( 'Comments are closed.' , 'twentytwelve' ); ?></p>
-		<?php endif; ?>
+		endif;
 
-	<?php endif; // have_comments() ?>
+	endif; // Check for have_comments().
 
-	<?php comment_form(); ?>
+	comment_form();
+	?>
 
-</div><!-- #comments .comments-area -->
+</div><!-- #comments -->

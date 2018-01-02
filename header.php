@@ -1,76 +1,45 @@
 <?php
 /**
- * The Header for our theme.
+ * The header for our theme
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Port25V2
  */
-?><!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
+
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-<?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-  <div class="navbar" id="top-nav">
-    <div class="navbar-inner">
-       <ul class="nav">
-          <li class="logo"> Port 25 Guy</li>
-          <li> Presents...</li>
-        </ul>
-    </div>
-  </div>
-	<header id="masthead" class="site-header" role="banner">
+<div id="page" class="site">
+	<header class="port25-header">
+		<div class="wrapper">
+			<a class="logo" title="<?php bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 
-		<hgroup class="header-container">
-		  <div class="site-logo pull-left">
-        <?php $header_image = get_header_image();
-         if ( ! empty( $header_image ) ) : ?>
-    			  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-    			  <img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
-    		<?php endif; ?>
-    	</div>
-    	<div class="site-title pull-left">
-			  <h1>
-    		  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-    		</h1>
-			  <h5 class="site-description"><?php bloginfo( 'description' ); ?></h5>
+			</a>
+			<div class="port25-description">
+				<?php echo $description;?>
 			</div>
-		</hgroup>
-
-
-      <!-- Main Navigation -->
-      <div class="navbar" id="main-nav">
-        <div class="navbar-inner">
-		      <div class="nav-container">
-		        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
-		      </div>
-		    </div>
-		  </div>
-		<!-- / Main Navigation -->
-
-
-	</header><!-- #masthead -->
-
-	<div id="main" class="wrapper">
+		</div>
+	</header>
+	<nav class="port25-navigation">
+			<div class="wrapper">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+				?>
+			</div>
+		</nav>
+	<div id="content" class="site-content wrapper">
