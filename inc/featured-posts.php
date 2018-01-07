@@ -4,6 +4,7 @@
     'post_type'  => 'post',
     'meta_key'   => '_is_ns_featured_post',
     'meta_value' => 'yes',
+    'posts_per_page' => 3
     );
   // Get current page and append to custom query parameters array
   $custom_query_args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
@@ -22,17 +23,15 @@
       <!-- the loop -->
       <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
         <li class="featured-posts-list-item">
-          <div class="featured-posts-list-item-wrapper">
-            <h2 class="featured-posts-list-item-title">
-              <a href="<?php the_permalink(); ?>">
+          <a href="<?php the_permalink(); ?>">
+            <div class="featured-posts-list-item-wrapper">
+              <h2 class="featured-posts-list-item-title">
                 <?php the_title(); ?>
-              </a>
-            </h2>
-            <div class="featured-posts-list-exerpt">
-               <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?>
-              </a>
+              </h2>
+              <div class="featured-posts-list-exerpt"><?php the_excerpt(); ?>
               </div>
-          </div>
+            </div>
+          </a>
         </li>
       <?php endwhile; ?>
       <!-- end of the loop -->

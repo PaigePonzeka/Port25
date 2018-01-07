@@ -13,7 +13,7 @@
 }
 
 .port25-navigation {
-  background: $color-dark-blue;
+  background: $navigation-bg;
   height: 30px;
   padding: 10px 0;
   width: 100%;
@@ -31,10 +31,10 @@
       float: left;
 
       &.current_page_item a {
-        color: $link-color-on-dark-hover;
+        color: $navigation-active-color;
 
         &:hover {
-          color: $link-color-on-dark-hover;
+          color: $navigation-active-color;
           text-decoration: none;
         }
       }
@@ -50,7 +50,7 @@
         }
 
         &:hover {
-          color: $link-color-on-dark-hover;
+          color: $navigation-active-color;
           text-decoration: underline;
         }
       }

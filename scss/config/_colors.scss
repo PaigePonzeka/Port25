@@ -1,23 +1,27 @@
 /**
  * Cool Corporate: http://www.colourlovers.com/palette/44520/Cool_Corporate
+ *
+ * http://www.colorhunt.co/c/87026
  */
 
-$color-neutral-gray: #A0A0A4;
-$color-sage-green: #B3C7AC;
-$color-fog-blue: #66828E;
-$color-dark-blue: #302641;
-$color-dark-gray: #7D7F83;
+$color-primary: #363333;
+$color-secondary: #272121;
+$color-action: #E16428;
+$color-bg: #F6E9E9;
 
-$light-bg: $color-neutral-gray;
+$light-bg: $color-bg;
 
-$color-border: $color-sage-green;
-$footer-border: $color-border;
-$link-color-on-dark-hover: $color-sage-green;
+$color-border: $color-action;
+$footer-border: $color-action;
+$link-color-on-dark-hover: $color-action;
 $link-color-on-dark: #fff;
-$link-color: $color-fog-blue;
+$link-color: $color-action;
 
-$color-posts-bg: $color-dark-blue;
-$color-posts-bg-alt: $color-dark-gray;
-$color-posts-bg-alt-2: $color-fog-blue;
+$color-posts-bg: $color-secondary;
+$color-posts-bg-alt: $color-primary;
+$color-posts-bg-alt-2: $color-primary;
 
-$headline-color: $color-dark-blue;
+$headline-color: $color-secondary;
+
+$navigation-bg: $color-action;
+$navigation-active-color: $color-secondary;

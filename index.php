@@ -29,20 +29,9 @@ get_header(); ?>
 			endif;
 			?>
 			<?php include(locate_template('inc/featured-posts.php')); ?>
+			<section>
 				<h3 class="section-title">Recent Posts</h3>
-				<ul class="posts-list">
-
-					<?php
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
-
-						include(locate_template('inc/posts-item.php'));
-
-						/*get_template_part( 'template-parts/content', get_post_format() );*/
-
-					endwhile;
-					?>
-				</ul>
+				<?php include(locate_template('inc/post-list.php')); ?>
 			</section>
 			<?php
 			the_posts_navigation();

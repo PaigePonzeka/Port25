@@ -6,8 +6,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     sass: {                              // Task
       dist: {                            // Target
-        options: {                       // Target options
-          style: 'expanded',
+        options: {
+          style: 'compressed',
           loadPath: [
             require('node-bourbon').includePaths,
             require('node-neat').includePaths]
@@ -39,16 +39,9 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'js/src/Main.js' ],
+          'js/src/main.js' ],
         dest: 'js/port25.js',
-      }/*,
-      dist: {
-        src: [
-          'js/src/utils/YextShare.js',
-          'js/src/ontour/utils/*',
-          'js/src/ontour/ontour-main.js'],
-        dest: 'js/ontour.js',
-      },*/
+      }
     },
     uglify: {
         options: {
@@ -66,6 +59,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-compass');
 
 
 
